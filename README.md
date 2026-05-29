@@ -1,16 +1,36 @@
-# React + Vite
+# AI Timesheet Writer⏱️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, glassmorphic React application that converts rough, informal work notes into polished, professional timesheet updates instantly. Powered by a **local Gemma** model running locally on your computer—meaning your work logs never leave your machine.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- 🔒 **100% Local & Private**: No cloud APIs or API keys are required. All inference is run locally on your system using Ollama.
+- ✨ **Custom Output Tones**:
+  - **Professional**: Formal & polished language for corporate or client updates.
+  - **Concise**: Brief & direct summaries.
+  - **Detailed**: Thorough & comprehensive descriptions.
+- 💡 **Quick Suggestions**: Clickable tags to instantly append common actions (e.g. `Fixed API issue`, `Tested login flow`) into your work notes.
+- ⚡ **Char-Counter UI**: Tracks input character count with a limit of 1000 characters.
+- 🎨 **Premium Aesthetics**: Dark theme, grid pattern background, glow effects, responsive card grids, and smooth loading state skeletons.
+- 📋 **Actions**: Copy output to clipboard or clear it in one click.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Technical Architecture
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The project consists of two key parts:
+1. **Frontend**: React + Vite SPA using standard CSS.
+2. **Backend**: Express.js server functioning as an API gateway mapping standard Anthropic API payload structures to Ollama's local chat format.
+
+---
+
+## Getting Started
+
+### Prerequisites
+1. **Node.js** (v18 or higher recommended)
+2. **Ollama** installed on your PC. Download it from [ollama.com](https://ollama.com).
+3. Download the **Gemma** model on your PC by running:
+   ```bash
+   ollama pull gemma4:e2b
